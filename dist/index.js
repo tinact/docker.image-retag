@@ -116,21 +116,21 @@ function run() {
 }
 const login = (registry, registryUsername, registryPassword) => __awaiter(void 0, void 0, void 0, function* () {
     core.info(`Logging into Docker registry ${registry}.`);
-    cp.execSync(`docker login -u ${registryUsername} --password-stdin ${registry}`, {
+    cp.execSync(`docker login -u ${registryUsername} --password-stdin ${registry} >/dev/null 2>&1`, {
         input: registryPassword
     });
 });
 const pull = (repositoryOld, registry) => __awaiter(void 0, void 0, void 0, function* () {
     core.info(`Pulling docker image to ${registry}`);
-    cp.execSync(`docker pull ${repositoryOld}`);
+    cp.execSync(`docker pull ${repositoryOld} >/dev/null 2>&1`);
 });
 const push = (repositoryNew, registry) => __awaiter(void 0, void 0, void 0, function* () {
     core.info(`Pushing docker image to ${registry}`);
-    cp.execSync(`docker push ${repositoryNew}`);
+    cp.execSync(`docker push ${repositoryNew} >/dev/null 2>&1`);
 });
 const retag = (repositoryOld, repositoryNew) => __awaiter(void 0, void 0, void 0, function* () {
     core.info(`Retag Image`);
-    cp.execSync(`docker tag ${repositoryOld} ${repositoryNew}`);
+    cp.execSync(`docker tag ${repositoryOld} ${repositoryNew} >/dev/null 2>&1`);
 });
 run();
 

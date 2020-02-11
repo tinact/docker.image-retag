@@ -52,7 +52,7 @@ const login = async (
 ): Promise<void> => {
   core.info(`Logging into Docker registry ${registry}.`)
   cp.execSync(
-    `docker login -u ${registryUsername} --password-stdin ${registry}`,
+    `docker login -u ${registryUsername} --password-stdin ${registry} >/dev/null 2>&1`,
     {
       input: registryPassword
     }
@@ -61,12 +61,12 @@ const login = async (
 
 const pull = async (repositoryOld: string, registry: string): Promise<void> => {
   core.info(`Pulling docker image to ${registry}`)
-  cp.execSync(`docker pull ${repositoryOld}`)
+  cp.execSync(`docker pull ${repositoryOld} >/dev/null 2>&1`)
 }
 
 const push = async (repositoryNew: string, registry: string): Promise<void> => {
   core.info(`Pushing docker image to ${registry}`)
-  cp.execSync(`docker push ${repositoryNew}`)
+  cp.execSync(`docker push ${repositoryNew} >/dev/null 2>&1`)
 }
 
 const retag = async (
@@ -74,7 +74,7 @@ const retag = async (
   repositoryNew: string
 ): Promise<void> => {
   core.info(`Retag Image`)
-  cp.execSync(`docker tag ${repositoryOld} ${repositoryNew}`)
+  cp.execSync(`docker tag ${repositoryOld} ${repositoryNew} >/dev/null 2>&1`)
 }
 
 run()
