@@ -1,0 +1,29 @@
+name: Testing Action
+
+on: [push]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Testing action docker hub new tag retag
+        uses: ./
+        with:
+          image_name: sbaerlocher/test
+          image_old_tag: do_not_use
+          image_new_tag: retag
+          registry: registry.hub.docker.com
+          registry_username: sbaerlocher
+          registry_password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Testing action docker hub new tag latest
+        uses: ./
+        with:
+          image_name: sbaerlocher/test
+          image_old_tag: do_not_use
+          registry: registry.hub.docker.com
+          registry_username: sbaerlocher
+          registry_password: ${{ secrets.DOCKER_TOKEN }}

@@ -1,0 +1,36 @@
+---
+name: 'Docker image semver latest'
+description: 'Search latest semver Image.'
+author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>'
+inputs:
+  image_name:
+    description: "Name of the docker image for the last semver version."
+    required: true
+outputs:
+  image_name:
+    required: true
+    description: "The name of the image you would like to retag."
+  image_old_tag:
+    required: true
+    description: "The old tag of the image you would like to retag."
+  image_new_tag:
+    required: true
+    description: "The new tag of the image you would like to retag."
+  registry:
+    required: true
+    description: "URL of a Docker compatible registry for pull and pushing a Docker image."
+  registry_username:
+    required: true
+    description: "Registry Username"
+  registry_password:
+    required: true
+    description: |
+      Registry Password. This should be stored in a Secret on Github.
+
+      See https://help.github.com/en/github/automating-your-workflow-with-github-actions/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables.
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'box'
+  color: 'blue'
