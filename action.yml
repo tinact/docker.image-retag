@@ -1,6 +1,6 @@
 ---
 name: 'Docker image retag'
-description: 'Retags a given Docker Image and pushs the new tag to the given registry'
+description: 'Retags a given Docker Image and pushes the new tag to the given registry'
 author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>'
 inputs:
   image_name:
