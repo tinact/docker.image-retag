@@ -27,7 +27,7 @@ async function run(): Promise<void> {
 
     pull(repositoryOld, registry)
       .then(() =>
-        core.info(`Successfully Pulling docker image to ${registry}.`)
+        core.info(`Successfully Pulling docker image from ${registry}.`)
       )
       .catch(err => core.setFailed(err.message))
 
