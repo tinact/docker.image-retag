@@ -10,9 +10,12 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 Bump @typescript-eslint/parser from 2.23.0 to 4.26.0
 Bump eslint-plugin-github from 3.4.1 to 4.1.2
 Bump ts-jest from 25.2.1 to 25.5.1
-Bump @zeit/ncc from 0.21.1 to 0.22.3 
-Bump hosted-git-info from 2.8.8 to 2.8.9 
+Bump @zeit/ncc from 0.21.1 to 0.22.3
+Bump hosted-git-info from 2.8.8 to 2.8.9
 Bump @types/node from 13.9.0 to 15.9.0
+Bump js-yaml from 3.13.1 to 4.1.0
+Bump typescript from 3.8.3 to 4.3.2
+Bump eslint from 6.8.0 to 7.27.0
 
 ## 1.0.2
 
