@@ -9,18 +9,3 @@ updates:
   - sbaerlocher
   assignees:
   - sbaerlocher
-  ignore:
-  - dependency-name: "@typescript-eslint/parser"
-    versions:
-    - 4.11.1
-    - 4.14.1
-  - dependency-name: "@types/node"
-    versions:
-    - 14.14.17
-    - 14.14.22
-  - dependency-name: eslint-plugin-jest
-    versions:
-    - 24.1.3
-  - dependency-name: lodash
-    versions:
-    - 4.17.20
