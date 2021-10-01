@@ -23,7 +23,7 @@
   "author": "Simon Baerlocher <s.baerlocher@sbaerlocher.ch>",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.3.0"
+    "@actions/core": "^1.6.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
